@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: aqua;
+            padding-left: 30px;
+            box-sizing: content-box;
+        }
+
+        .form-div {
+            margin-left: 480px;
+        }
+
+        .input-div {
+            font-size: 20px;
+            margin-top: 10px;
+            -webkit-padding-start: 15px;
+            box-sizing: content-box;
+        }
+        .regbtn {                 
+            width: auto;
+            padding: 10px 18px;
+            background-color: #3643f4;
+            margin-top: 50px
+            }
+
+        #firstname {
+            margin-left: 60px;
+        }
+
+        #lastname {
+            margin-left: 62px;
+        }
+
+        #fathersname {
+            margin-left: 33px;
+        }
+
+        #dateofbirth {
+            margin-left: 43px;
+             
+        }
+
+        #address {
+            margin-left: 80px;
+        }
+        #mobile {
+            margin-left: 90px;
+        }
+        #email {
+            margin-left: 100px;
+        }
+        #password  {
+            margin-left: 72px;
+        }
+        #male {
+            margin-left: 80px;
+        }
+        input[type="submit"] {
+            margin-left: 50px;
+            margin-top: 30px;
+            color: black;
+            height: 35px;
+            width: 150px;
+            background-color: lime;
+            
+        }
+
+        input[type="text"],input[type="email"], input[type="password"], input[type="date"], input[type="number"] {
+            height: 30px;
+            width: 200px;
+        }
+
+    </style>
+
+<script type="text/javascript">
+function getMobile() {
+    var mob = document.getElementById("mobile").value;
+    alert(mob);
+    console.log("mobile number",mob);
+    var phonenoPattern = /^\d{10}$/;
+        if(mob.match(phonenoPattern)) {
+            alert("success..");
+            return true;
+        } else {
+            alert("Not a valid Phone Number");
+            return false;
+        }
+
+}
+    function getDetails1() {
+      var firstname = document.getElementById("firstname").value;
+      var fatname = document.getElementById("fathersname").value;
+     // var dob = document.getElementById("Date of birth").value;
+      var add = document.getElementById("address").value;
+     
+      var pass = document.getElementById("password").value;
+      var confpass = document.getElementById("confirm_password").value;
+
+      console.log("username:", firstname," fatname: ", fatname, " pass:", pass);
+
+      if(firstname.length <= 0) {
+        alert("Please enter valid username: ");
+        return false;
+      } 
+      else if(fatname.length <= 0) {
+          alert("Enter father's name ");
+          return false;
+      }
+      
+      else if(pass.length <= 0) {
+        alert("Please enter valid passward: ");
+        return false;
+      } else if(pass !== confpass) {
+            alert("Please enter valid passward: ")
+            return false;
+        } else {
+
+            return getMobile();
+
+        }
+       
+    return true;
+}
+  </script>
+  
+  </head>
+  
+  <body>
+
+    <h2 style=text-align:center;>Registration</h2>
+    <form onsubmit="getDetails1()" action="./html1.html" class="form-div">
+
+        <div class="input-div">
+            <span> First name : </span>
+            <input type="text" id="firstname" required />
+        </div>
+
+        <div class="input-div">
+            <span> Last name : </span>
+            <input type="text" id="lastname" />
+        </div>
+
+        <div class="input-div">
+            <span>Gender :</span>
+            <input type="radio"  id="male"  >Male
+             <input type="radio" id="male" />Female
+        </div>
+
+        <div class="input-div">
+            <span>Father's name : </span>
+            <input type="text"  id="fathersname" required />
+        </div>
+
+        <div class="input-div">
+            <span>Date of birth : </span>
+            <input type="Date"  id="dateofbirth" />
+        </div>
+
+        <div class="input-div">
+            <span>Address :</span>
+            <textarea type="textarea"  id="address" required ></textarea>
+        </div>
+
+        <div class="input-div">
+            <span> Mobile : </span>
+            <input type="number"  id="mobile" required />
+        </div>
+
+        <div class="input-div">
+            <span> Email :</span> 
+            <input type="email" id="email"/>
+        </div>
+
+        <div class="input-div">
+            <span>Password : </span>
+            <input type="password"  id="password" required />
+        </div>
+
+        <div class="input-div">
+            <span> Confirm Password : </span>
+            <input type="password"   id="confirm_password" required />
+        </div>
+
+        
+        <button type="submit"  class="regbtn">Register me </button>
+        
+    </form>
+
+</body>
+
+</html>

@@ -10,13 +10,18 @@
 }
 
 input[type=text], input[type=password] {
-  width: 50%;
+  width: 20%;
   padding: 12px;
   margin: 8px ;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: content-box;
 }
+
+#username {
+  margin-left: 35px !important;
+}
+
 button {
   background-color: green;
   color: white;
@@ -30,12 +35,19 @@ button {
   padding: 10px 18px;
   background-color: #f44336;
 }
+.regbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #3643f4;
+}
 .container {
   padding: 16px;
 }
 
   .avater-img {
      border-radius: 50%;
+     width: 100px;
+     height: 100px;
 }
 
 body {
@@ -47,24 +59,51 @@ body {
 }
 
 </style>
+
+<script type="text/javascript">
+  function getDetails() {
+    var username = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+    
+    if(username.length <= 0) {
+      alert("Please enter valid username: ");
+      return;
+    } else if(pass.length <= 0) {
+      alert("Please enter valid passward: ");
+      return;
+    } else if(username == "Rashmi" && pass == "Ankit") {
+      alert("Welcome: "+ username + " you have loggedIn");
+      return true;
+     // location.href = "./html1.html";
+    } else {
+      alert("Oops!! Wrong username or password: ");
+    }
+    return false;
+  }
+</script>
+
 </head>
 
 <body>
   <h2 style=text-align:center;>Login Form</h2>
 
-  <form action="/action_page.php">
+  <form  action="./Registration.html" onsubmit="getdetails()",onsubmit="registerme">
 
     <img class="avater-img" src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar">
 
     <div class="container">
       Name:
-      <input type="text"> <br></br>
+      <input type="text" id="username" required> <br></br>
+
       Password:
-      <input type="password"><br><br>
+      <input id="password" type="password" required><br><br>
+
       <button type="submit">Login</button> <br><br>
       <input type="checkbox" checked="checked" name="remember"> Remember me
       <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="regbtn">Register Me</button>
    
     </div>
   </form>
-</body </html>
+</body>
+ </html>
