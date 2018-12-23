@@ -45,6 +45,8 @@
 
         #address {
             margin-left: 80px;
+            width: 200px;
+            height: 50px;
         }
         #mobile {
             margin-left: 90px;
@@ -88,6 +90,7 @@ function getMobile() {
             alert("Not a valid Phone Number");
             return false;
         }
+        
 
 }
     function getDetails1() {
@@ -131,11 +134,11 @@ function getMobile() {
   <body>
 
     <h2 style=text-align:center;>Registration</h2>
-    <form onsubmit="getDetails1()" action="./html1.html" class="form-div">
-
+    <form onsubmit="return getDetails1();" action="./html1.html" class="form-div">
+        
         <div class="input-div">
-            <span> First name : </span>
-            <input type="text" id="firstname" required />
+         <span> First name : </span>
+           <input type="text" id="firstname" required />
         </div>
 
         <div class="input-div">

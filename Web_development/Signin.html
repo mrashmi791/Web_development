@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    
+    <style>
+        body {
+            
+           
+            background-image: url("E:\html work\Web_development\images\dribbble.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+
+        .input-div {
+            font-size: 20px;
+            margin-top: 10px;
+            -webkit-padding-start: 15px;
+            box-sizing: content-box;
+            text-align: -webkit-center;
+        }
+
+        .btn {                 
+            width: 100px;
+            height: 35px;
+            padding: 10px 18px;
+            background-color: #3643f4;
+            margin-top: 20px;
+            text-align: -webkit-center;
+            }
+            .content {
+                padding-left: 30px;
+            box-sizing: content-box;
+            
+            text-align: -webkit-center;
+            }
+
+    </style>
+
+    <script type="text/javascript">
+        function submitDetails(form) {
+            //var username = document.getElementById("username").value;
+            //var pass = document.getElementById("password").value;
+            //alert(form.username.value);
+            var username = form.username.value;
+            var pass = form.password.value;
+            if (username.length <= 0) {
+                alert("Please enter valid username: ");
+                return false;
+            } else if (pass.length <= 0) {
+                alert("Please enter valid passward: ");
+                return false;
+            } else if (username == "Rashmi" && pass == "Ankit") {
+                alert("Welcome: " + username + " you have loggedIn");
+                return true;
+
+            } else {
+                alert("Oops!! Wrong username or password : ");
+            }
+            return false;
+        }
+    </script>
+
+</head>
+
+<body background-image: url("E:\html work\Web_development\images\dribbble.jpg")>
+    <h2 style=text-align:center;>Sign up</h2>
+
+    <form method="POST"  onsubmit="return submitDetails(this)" action="./Signup1.html">
+        <div class="content">
+        <div class="input-div">
+            <span> Username : </span>
+            <input type="text" name="username" id="username" required />
+        </div>
+
+        <div class="input-div">
+            <span>Password : </span>
+            <input type="password" name="password" id="password" required />
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+    </div>
+    </form>
+    
+</body>
+
+</html>
